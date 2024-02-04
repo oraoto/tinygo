@@ -35,6 +35,9 @@
 [submodule "lib/renesas-svd"]
 	path = lib/renesas-svd
 	url = https://github.com/tinygo-org/renesas-svd.git
+[submodule "lib/wch"]
+	path = lib/wch
+	url = https://github.com/ch32-rs/ch32-rs
 [submodule "src/net"]
 	path = src/net
 	url = https://github.com/tinygo-org/net.git
