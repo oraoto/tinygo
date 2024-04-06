@@ -1,4 +1,4 @@
-//go:build !tinygo.riscv && !cortexm
+//go:build !tinygo.riscv && !cortexm && !tinygo.riscve
 
 package runtime
 

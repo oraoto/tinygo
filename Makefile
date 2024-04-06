@@ -236,6 +236,10 @@ gen-device-renesas: build/gen-device-svd
 	./build/gen-device-svd -source=https://github.com/tinygo-org/renesas-svd lib/renesas-svd/ src/device/renesas/
 	GO111MODULE=off $(GO) fmt ./src/device/renesas
 
+gen-device-wch: build/gen-device-svd
+	./build/gen-device-svd -source=lib/wch lib/wch src/device/wch/
+	GO111MODULE=off $(GO) fmt ./src/device/wch
+
 # Get LLVM sources.
 $(LLVM_PROJECTDIR)/llvm:
 	git clone -b xtensa_release_16.x --depth=1 https://github.com/espressif/llvm-project $(LLVM_PROJECTDIR)

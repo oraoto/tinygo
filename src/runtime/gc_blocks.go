@@ -241,9 +241,10 @@ func setHeapEnd(newHeapEnd uintptr) {
 // responsible for copying the metadata to the new location.
 func calculateHeapAddresses() {
 	totalSize := heapEnd - heapStart
-
 	// Allocate some memory to keep 2 bits of information about every block.
-	metadataSize := (totalSize + blocksPerStateByte*bytesPerBlock) / (1 + blocksPerStateByte*bytesPerBlock)
+	// metadataSize := (totalSize + blocksPerStateByte*bytesPerBlock) / (1 + blocksPerStateByte*bytesPerBlock)
+	// TODO: why division does not work?
+	metadataSize := uintptr(23)
 	metadataStart = unsafe.Pointer(heapEnd - metadataSize)
 
 	// Use the rest of the available memory as heap.
